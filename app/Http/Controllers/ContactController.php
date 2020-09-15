@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -18,5 +19,14 @@ class ContactController extends Controller
         $contact->save();
 
         return redirect()->route('home')->with('success', 'message added');
+    }
+
+    public function allData()
+    {
+        return view('messages', [
+            'data' => DB::table('contacts')
+                ->orderBy('id', 'desc')
+                ->get()
+        ]);
     }
 }

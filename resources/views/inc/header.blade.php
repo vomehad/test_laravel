@@ -4,6 +4,7 @@
         <a class="p-2 text-dark" href="{{ route('home') }}">Main</a>
         <a class="p-2 text-dark" href="{{ route('about') }}">About</a>
         <a class="p-2 text-dark" href="{{ route('contact') }}">Contact</a>
+        <a class="p-2 text-dark" href="{{ route('contact-data') }}">all messages</a>
     </nav>
 </div>
 
